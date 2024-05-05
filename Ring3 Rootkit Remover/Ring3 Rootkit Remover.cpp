@@ -87,20 +87,6 @@ VOID RemoteUnhookDLL(HANDLE hProcess, LPCWSTR name)
 	}
 }
 
-BOOL TerminateSpecificProcess(DWORD dwProcessId, UINT uExitCode)
-{
-	DWORD dwDesiredAccess = PROCESS_TERMINATE;
-	BOOL bInheritHandle = FALSE;
-	HANDLE hProcess = OpenProcess(dwDesiredAccess, bInheritHandle, dwProcessId);
-	if (hProcess == NULL)
-	{
-		return FALSE;
-	}
-	BOOL result = TerminateProcess(hProcess, uExitCode);
-	CloseHandle(hProcess);
-	return result;
-}
-
 BOOL EnableDebugPrivilege()
 {
 	BOOL result = FALSE;
