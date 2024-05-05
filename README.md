@@ -2,4 +2,4 @@
 
 Unhooks all ring 3 rootkits, and specifically removes the stock r77 rootkit installation.
 
-Requirements: You need to run the file as admin.
+Requirements: You need to run the remover as admin.
